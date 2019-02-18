@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 app.get('/', (req, res) => {
-  const msg = 'hello world';
+  const msg = 'hello world from docker';
   console.log(msg);
   res.send(msg);
 });
