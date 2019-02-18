@@ -16,6 +16,7 @@ echo 04: Docker: STDIN attach
 echo 05: Shell
 echo 06: Docker: View Logs
 echo 07: Docker: Compose 
+echo 08: Docker: Backup
 echo ----------------------------------------------
 echo qq: Exit [Quit]
 echo Enter [Selection] to continue
@@ -94,6 +95,16 @@ case "$SELECTION" in
   echo ===========================================================
   docker-compose -f dev.yml up -d
   ;;
+
+
+  "08" )
+  echo ===========================================================
+  echo Docker backup
+  echo ===========================================================
+#  docker commit -p $CONTAINER
+  docker save -o backup/$IMAGE.tar $IMAGE
+  ;;
+
 
   "qq" )
   echo Quit
